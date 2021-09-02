@@ -1,8 +1,5 @@
 # ULID.swift
 
-[![Build Status](https://travis-ci.org/yaslab/ULID.swift.svg?branch=master)](https://travis-ci.org/yaslab/ULID.swift)
-[![codecov](https://codecov.io/gh/yaslab/ULID.swift/branch/master/graph/badge.svg)](https://codecov.io/gh/yaslab/ULID.swift)
-
 Implementation of [ULID](https://github.com/ulid/spec/blob/master/README.md) in Swift.
 
 ## Usage
@@ -44,7 +41,7 @@ import Foundation
 import ULID
 
 let ulid = ULID(ulidString: "01D132CXJVYQ7091KZPZR5WH1X")!
-let uuid = UUID(uuid: ulid.ulid)
+let uuid = UUID(ulid)
 print(uuid.uuidString) // 01684626-765B-F5CE-0486-7FB7F05E443D
 ```
 
@@ -55,30 +52,22 @@ import Foundation
 import ULID
 
 let uuid = UUID(uuidString: "01684626-765B-F5CE-0486-7FB7F05E443D")!
-let ulid = ULID(ulid: uuid.uuid)
+let ulid = ULID(uuid)
 print(ulid.ulidString) // 01D132CXJVYQ7091KZPZR5WH1X
 ```
 
 ## Installation
 
-### CocoaPods
-
-```
-pod 'ULID.swift', '~> 1.1.0'
-```
-
-### Carthage
-
-```
-github "yaslab/ULID.swift" ~> 1.1.0
-```
-
 ### Swift Package Manager
 
 ```
-.package(url: "https://github.com/yaslab/ULID.swift.git", .upToNextMinor(from: "1.1.0"))
+.package(
+  name: "swift-ulid"
+  url: "https://github.com/edudo-inc/swift-ulid.git",
+  .upToNextMinor(from: "1.0.0")
+)
 ```
 
 ## License
 
-ULID.swift is released under the MIT license. See the [LICENSE](https://github.com/yaslab/ULID.swift/blob/master/LICENSE) file for more info.
+ULID.swift is released under the MIT license. See the [LICENSE](https://github.com/edudo-inc/swift-ulid/blob/main/LICENSE) file for more info.

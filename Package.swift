@@ -1,15 +1,23 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
 let package = Package(
-    name: "ULID.swift",
-    products: [
-        .library(name: "ULID", targets: ["ULID"])
-    ],
-    targets: [
-        .target(name: "ULID"),
-        .testTarget(name: "ULIDTests", dependencies: ["ULID"])
-    ],
-    swiftLanguageVersions: [.v5]
+  name: "swift-ulid",
+  products: [
+    .library(
+      name: "ULID",
+      type: .static,
+      targets: ["ULID"]
+    )
+  ],
+  targets: [
+    .target(name: "ULID"),
+    .testTarget(
+      name: "ULIDTests",
+      dependencies: [
+        .target(name: "ULID")
+      ]
+    )
+  ]
 )
